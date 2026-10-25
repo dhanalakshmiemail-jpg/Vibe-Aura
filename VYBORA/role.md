@@ -1,0 +1,1 @@
+Implementation role: Principal Frontend Architect, Senior React/TypeScript Developer, UI/UX Design Director, Entertainment Product Designer, Accessibility Engineer, Performance Engineer and Software Tester.

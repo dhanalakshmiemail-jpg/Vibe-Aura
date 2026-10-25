@@ -1,0 +1,1 @@
+import {Navigate,useLocation} from 'react-router-dom'; import {useAppSelector} from '../app/hooks'; import type {ReactNode} from 'react'; export default function ProtectedRoute({children}:{children:ReactNode}){const user=useAppSelector(s=>s.auth.user);const loc=useLocation();return user?children:<Navigate to="/login" replace state={{from:loc.pathname}}/>}

@@ -1,0 +1,3 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap');
+@import './tokens.css';
+::-webkit-scrollbar{width:9px;height:9px}::-webkit-scrollbar-thumb{background:#303449;border-radius:99px}::selection{background:#7C3AED;color:#fff}

@@ -1,0 +1,10 @@
+import {configureStore,createSlice,PayloadAction} from '@reduxjs/toolkit';
+import type {EntertainmentItem,Role,User} from '../types';
+const authSlice=createSlice({name:'auth',initialState:{user:null as User|null},reducers:{login:(s,a:PayloadAction<User>)=>{s.user=a.payload},logout:s=>{s.user=null}}});
+const librarySlice=createSlice({name:'library',initialState:{favorites:[] as string[],watched:[] as string[],recent:[] as string[]},reducers:{toggleFavorite:(s,a:PayloadAction<string>)=>{s.favorites=s.favorites.includes(a.payload)?s.favorites.filter(x=>x!==a.payload):[...s.favorites,a.payload]},toggleWatched:(s,a:PayloadAction<string>)=>{s.watched=s.watched.includes(a.payload)?s.watched.filter(x=>x!==a.payload):[...s.watched,a.payload]},recent:(s,a:PayloadAction<string>)=>{s.recent=[a.payload,...s.recent.filter(x=>x!==a.payload)].slice(0,12)}}});
+const discoverySlice=createSlice({name:'discovery',initialState:{mood:'All',theme:'dark' as 'dark'|'light'},reducers:{setMood:(s,a:PayloadAction<string>)=>{s.mood=a.payload},setTheme:(s,a:PayloadAction<'dark'|'light'>)=>{s.theme=a.payload}}});
+const quizSlice=createSlice({name:'quiz',initialState:{score:0,completed:0},reducers:{finish:(s,a:PayloadAction<number>)=>{s.score=a.payload;s.completed+=1}}});
+const challengeSlice=createSlice({name:'challenges',initialState:{completed:[] as string[]},reducers:{complete:(s,a:PayloadAction<string>)=>{if(!s.completed.includes(a.payload))s.completed.push(a.payload)}}});
+export const store=configureStore({reducer:{auth:authSlice.reducer,library:librarySlice.reducer,discovery:discoverySlice.reducer,quiz:quizSlice.reducer,challenges:challengeSlice.reducer}});
+export const {login,logout}=authSlice.actions; export const {toggleFavorite,toggleWatched,recent}=librarySlice.actions; export const {setMood,setTheme}=discoverySlice.actions; export const {finish}=quizSlice.actions; export const {complete}=challengeSlice.actions;
+export type RootState=ReturnType<typeof store.getState>; export type AppDispatch=typeof store.dispatch;

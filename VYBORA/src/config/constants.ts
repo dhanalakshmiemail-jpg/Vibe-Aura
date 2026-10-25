@@ -1,0 +1,1 @@
+export const APP_NAME='VYBORA'; export const APP_TAGLINE='Your Universe of Entertainment.'; export const MOODS=['Happy','Relaxed','Romantic','Energetic','Sad','Focused','Adventurous','Curious','Nostalgic','Spooky'] as const;

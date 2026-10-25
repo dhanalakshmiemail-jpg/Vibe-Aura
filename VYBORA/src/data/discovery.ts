@@ -1,0 +1,1 @@
+export const moodRules:Record<string,string[]>= {Happy:['Comedy','Animation'],Relaxed:['Drama'],Romantic:['Romance'],Energetic:['Action'],Sad:['Drama'],Focused:['Mystery'],Adventurous:['Adventure','Action'],Curious:['Mystery','Science Fiction'],Nostalgic:['Drama','Music'],Spooky:['Horror','Thriller']};

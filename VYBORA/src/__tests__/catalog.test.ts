@@ -1,0 +1,2 @@
+import {describe,it,expect} from 'vitest'; import {entertainmentCatalog} from '../data/entertainment'; import {musicCatalog} from '../data/music';
+describe('demo catalog',()=>{it('has a substantial catalog',()=>{expect(entertainmentCatalog.length).toBeGreaterThanOrEqual(40);expect(new Set(entertainmentCatalog.map(x=>x.id)).size).toBe(entertainmentCatalog.length)});it('has 20 music records',()=>expect(musicCatalog.length).toBeGreaterThanOrEqual(20))});

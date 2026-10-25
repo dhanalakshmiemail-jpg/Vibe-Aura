@@ -1,0 +1,1 @@
+export const environment={apiBaseUrl:import.meta.env.VITE_API_BASE_URL as string|undefined,apiTimeout:Number(import.meta.env.VITE_API_TIMEOUT||8000),appName:(import.meta.env.VITE_APP_NAME as string|undefined)||'VYBORA'};

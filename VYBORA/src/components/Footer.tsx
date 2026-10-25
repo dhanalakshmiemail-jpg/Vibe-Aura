@@ -1,0 +1,2 @@
+import {Box,Divider,Typography} from '@mui/material'; import Logo from './Logo';
+export default function Footer(){return <Box component="footer" sx={{mt:8,pb:5}}><Divider sx={{borderColor:'#ffffff10'}}/><Box className="container" sx={{py:4,display:'flex',justifyContent:'space-between',gap:3,flexWrap:'wrap'}}><Box><Logo/><Typography color="text.secondary" sx={{fontSize:12,mt:1}}>Your Universe of Entertainment.</Typography></Box><Typography color="text.secondary" sx={{fontSize:12,alignSelf:'end'}}>VYBORA • Frontend demo • © 2026</Typography></Box></Box>}
